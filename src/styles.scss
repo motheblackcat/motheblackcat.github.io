@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+div {
+  height: 1000px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  margin: 0 15px;
+}
