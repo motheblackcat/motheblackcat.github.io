@@ -1,1 +1,16 @@
-<div id="work">work</div>
+<section id="work">
+  <div class="wrapper">
+    <h2>"{{ zen$ | async }}" - Github Zen</h2>
+    <div class="sub-wrapper">
+      <div
+        class="card"
+        (click)="goTo(repo.html_url)"
+        *ngFor="let repo of repos$ | async"
+      >
+        <div>{{ repo.name }}</div>
+        <div>{{ repo.description }}</div>
+        <div>{{ repo.language }}</div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -8,10 +8,10 @@ import { Component, HostListener, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   @HostListener('window:scroll')
   onScrollHost() {
-    const divs = document.querySelectorAll('div');
-    divs.forEach((div: HTMLElement) => {
-      const check = div.getBoundingClientRect().y >= -600 && div.getBoundingClientRect().y <= 400;
-      const link = document.querySelector(`a[href="#${div.id}"]`) as HTMLElement;
+    const sections = document.querySelectorAll('section');
+    sections.forEach((section: HTMLElement) => {
+      const check = section.getBoundingClientRect().y >= -600 && section.getBoundingClientRect().y <= 400;
+      const link = document.querySelector(`a[href="#${section.id}"]`) as HTMLElement;
       link.style.color = check ? 'white' : 'grey';
     });
   }
