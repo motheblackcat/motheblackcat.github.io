@@ -1,12 +1,8 @@
 <section id="home">
   <div class="wrapper">
-    <blockquote>Hey, I'm Morad a Developper.</blockquote>
+    <h2>Hey, I'm Morad a Developper.</h2>
     <div class="sub-wrapper">
-      <div>Angular</div>
-      <div>Ionic</div>
-      <div>React</div>
-      <div>Vue</div>
-      <div>Unity</div>
+      <a *ngFor="let link of links" [href]="link.url" [class]="link.class" target="_blank"><i [class]="link.icon"></i></a>
     </div>
   </div>
 </section>
