@@ -32,6 +32,19 @@ export class WorkComponent implements OnInit {
       language: 'Vue',
       html_url: 'https://docs.github.com/en/rest/overview/resources-in-the-rest-api#rate-limiting',
     },
+    {
+      name: 'Git IO',
+      description:
+        'For API requests using Basic Authentication or OAuth, you can make up to 5,000 requests per hourFor API requests using Basic Authentication or OAuth, you can make up to 5,000 requests per hour',
+      language: 'CSS',
+      html_url: 'https://docs.github.com/en/rest/overview/resources-in-the-rest-api#rate-limiting',
+    },
+    {
+      name: 'lk',
+      description: 'For API requests using Basic Authentication or OAuth, you can make up to 5,000 requests per hour',
+      language: 'Typescript',
+      html_url: 'https://docs.github.com/en/rest/overview/resources-in-the-rest-api#rate-limiting',
+    },
   ];
 
   constructor(private gs: GithubService) {}

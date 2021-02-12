@@ -2,15 +2,21 @@
   <!-- <div class="wrapper">
     <h2>"{{ zen$ | async }}" - Github Zen</h2>
     <div class="sub-wrapper">
-      <div
-        class="card"
-        (click)="goTo(repo.html_url)"
-        *ngFor="let repo of repos$ | async"
-      >
+      <div class="card" (click)="goTo(repo.html_url)" *ngFor="let repo of repos$ | async">
         <div>{{ repo.name }}</div>
         <div>{{ repo.description }}</div>
         <div>{{ repo.language }}</div>
       </div>
     </div>
   </div> -->
+  <div class="wrapper">
+    <h2>"I put a quote from github with their API for the fun." - Github Zen</h2>
+    <div class="sub-wrapper">
+      <div class="card" (click)="goTo(repo.html_url)" *ngFor="let repo of repos">
+        <div>{{ repo.name }}</div>
+        <div>{{ repo.description }}</div>
+        <div>{{ repo.language }}</div>
+      </div>
+    </div>
+  </div>
 </section>

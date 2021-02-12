@@ -22,10 +22,11 @@ section {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 80%;
+    width: 90%;
 
     h2 {
-      margin-bottom: 5%;
+      text-align: center;
+      margin-bottom: 10%;
     }
 
     .sub-wrapper {
@@ -41,14 +42,13 @@ section {
         opacity: 0.8;
         width: 25%;
         margin: 0 10px;
-        padding: 20px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         cursor: pointer;
 
         div {
-          margin: 10px 0;
+          margin: 15px;
         }
       }
     }
@@ -59,4 +59,15 @@ a {
   text-decoration: none;
   color: white;
   outline: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .sub-wrapper {
+    flex-direction: column;
+
+    .card {
+      width: 100% !important;
+      margin: 10px 0 !important;
+    }
+  }
 }
