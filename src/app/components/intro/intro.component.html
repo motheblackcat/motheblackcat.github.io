@@ -1,8 +1,13 @@
-<section id="home">
-  <div class="wrapper">
-    <h2>Hey, I'm Morad a Developper.</h2>
-    <div class="sub-wrapper">
-      <a *ngFor="let link of links" [href]="link.url" [class]="link.class" target="_blank"><i [class]="link.icon"></i></a>
-    </div>
+<div id="home" class="row vh-100 intro-bg d-flex justify-content-center align-items-center">
+  <div class="col-2">
+    <h2>Hey I'm Morad</h2>
   </div>
-</section>
+  <div class="col-1">
+    <a href="https://angular.io/" class="angular" target="_blank">
+      <i class="fab fa-angular fa-6x"></i>
+    </a>
+  </div>
+  <div class="col-1">
+    <h2>developer.</h2>
+  </div>
+</div>

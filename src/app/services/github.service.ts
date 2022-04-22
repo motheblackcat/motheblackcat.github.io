@@ -1,32 +1,24 @@
+import { Observable } from 'rxjs';
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 
-import { Repo } from '../models/repo.interface';
+import { URLS } from '../enums/url.enum';
+import { Repo } from '../interfaces/repo.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class GithubService {
-  baseUrl = 'https://api.github.com/';
-  zen = 'zen';
-  repos = 'users/motheblackcat/repos';
+  URLS = URLS;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getZen(): Observable<string> {
-    return this.http.get(`${this.baseUrl}${this.zen}`, { responseType: 'text' }) as Observable<string>;
+    return this.http.get(`${this.URLS.BASE}${this.URLS.ZEN}`, { responseType: 'text' });
   }
 
-  // Define return type (Observable<Repo[]>)
   getRepos(): Observable<Repo[]> {
-    return this.http.get<Repo[]>(`${this.baseUrl}${this.repos}`).pipe(
-      map((repos: Repo[]) => {
-        return repos.map((repo: Repo) => {
-          return { name: repo.name, description: repo.description, language: repo.language, html_url: repo.html_url };
-        });
-      })
-    );
+    return this.http.get<Repo[]>(`${this.URLS.BASE}${this.URLS.REPOS}`);
   }
 }
