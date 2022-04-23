@@ -20,7 +20,7 @@ export const repos: Repo[] = [
     html_url: 'https://docs.github.com/en/rest/overview/resources-in-the-rest-api#rate-limiting',
   },
   {
-    name: 'fake repo',
+    name: 'fakerepo',
     description: 'Best frontend framework ever!',
     language: 'CSS',
     html_url: 'https://docs.github.com/en/rest/overview/resources-in-the-rest-api#rate-limiting',
