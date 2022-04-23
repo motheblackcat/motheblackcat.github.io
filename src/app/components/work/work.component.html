@@ -2,11 +2,11 @@
   <div class="row text-center d-flex align-items-center">
     <h2><i *ngIf="!(zen$ | async)" class="fas fa-spinner"></i> {{ (zen$ | async) ? (zen$ | async) : 'Loading Quote'}} - Github Zen</h2>
   </div>
-  <div class="row text-center">
-    <div *ngFor="let repo of repos$ | async" class="col">
-      <div class="row">{{ repo.name }}</div>
-      <div class="row">{{ repo.description }}</div>
-      <div class="row">{{ repo.language }}</div>
-    </div>
+  <div class="row">
+    <a *ngFor="let repo of repos$ | async" [href]="repo.html_url" target="_blank" class="col h-50 m-2 border rounded">
+      <div class="row m-2">{{ repo.name }}</div>
+      <div class="row m-2">{{ repo.description }}</div>
+      <div class="row m-2">{{ repo.language }}</div>
+    </a>
   </div>
 </div>
