@@ -1,5 +1,6 @@
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Repo } from 'src/app/interfaces/repo.interface';
+import { repos } from 'src/app/mocks/repos.mock';
 import { GithubService } from 'src/app/services/github.service';
 
 import { Component, OnInit } from '@angular/core';
@@ -10,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorkComponent implements OnInit {
   zen$: Observable<string> | undefined;
-  repos$: Observable<Repo[]> | undefined;
+  repos$: Observable<Repo[]> | undefined = of(repos);
 
   constructor(private gs: GithubService) { }
 
