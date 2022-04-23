@@ -1,12 +1,18 @@
-<div id="work" class="row vh-100 work-bg">
-  <div class="row text-center d-flex align-items-center">
-    <h2><i *ngIf="!(zen$ | async)" class="fas fa-spinner"></i> {{ (zen$ | async) ? (zen$ | async) : 'Loading Quote'}} - Github Zen</h2>
-  </div>
-  <div class="row">
-    <a *ngFor="let repo of repos$ | async" [href]="repo.html_url" target="_blank" class="col h-50 m-2 border border-2 rounded">
-      <div class="row m-2">{{ repo.name }}</div>
-      <div class="row m-2">{{ repo.description }}</div>
-      <div class="row m-2">{{ repo.language }}</div>
-    </a>
+<div id="work" class="row vh-100 work-bg align-items-center">
+  <div class="col">
+    <div class="row text-center ">
+      <div class="col h2 my-5">
+        <i *ngIf="!(zen$ | async)" class="fas fa-spinner"></i> {{ (zen$ | async) ? (zen$ | async) : 'Loading Quote' }} - Github Zen
+      </div>
+    </div>
+    <div class="row">
+      <diV *ngFor="let repo of repos$ | async" class="col-sm col-12 border border-2 rounded m-2 bg-dark">
+        <a [href]="repo.html_url" target="_blank">
+          <div class="row m-2">{{ repo.name }}</div>
+          <div class="row m-2">{{ repo.description }}</div>
+          <div class="row m-2">{{ repo.language }}</div>
+        </a>
+      </diV>
+    </div>
   </div>
 </div>
