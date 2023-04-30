@@ -1,12 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");  /* Google Roboto font */
-@import '~bootstrap/dist/css/bootstrap.min.css'; /* Bootstrap styles */
+/* Google Roboto font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+/* TODO: Refactor global classes */
+
+html,
 body {
-  scroll-behavior: smooth;
   font-family: "Roboto";
+  scroll-behavior: smooth;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
   background-color: black;
   color: white;
 
+  /* Global links behaviour */
   a {
     text-decoration: none;
     color: grey;
@@ -17,18 +24,51 @@ body {
     }
   }
 
-  .angular:hover {
-    color: #dd0031;
+  /* Size & position helpers */
+  .vhw-100 {
+    height: 100vh;
+    width: 100vw;
   }
 
-  .intro-bg {
+  .flex {
+    display: flex;
+  }
+
+  .flex-center {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .flex-between {
+    justify-content: space-between;
+  }
+
+  /* Icons */
+  .angular {
+    margin-left: 10px;
+
+    &:hover {
+      color: #dd0031;
+    }
+  }
+
+  .fa-linkedin:hover {
+    color: #1a85e9;
+  }
+
+  .fa-envelope:hover {
+    color: tan;
+  }
+
+  /* Backgrounds */
+  .home-bg {
     background: url("assets/intro-bg.png") center / cover fixed;
   }
 
   .work-bg {
     background: url("assets/work-bg.png") center / cover fixed;
   }
-  
+
   .contact-bg {
     background: url("assets/contact-bg.png") center / cover fixed;
   }

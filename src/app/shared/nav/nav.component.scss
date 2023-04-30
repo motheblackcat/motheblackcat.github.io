@@ -1,0 +1,23 @@
+nav {
+  position: fixed;
+  right: 0;
+
+  a {
+    margin: 20px;
+    width: 65px;
+    height: 65px;
+    border: 2px solid gray;
+    border-radius: 100%;
+
+    &:hover {
+      border: 2px solid white;
+      color: white;
+    }
+
+  }
+
+  .active {
+    border: 2px solid white;
+    color: white;
+  }
+}

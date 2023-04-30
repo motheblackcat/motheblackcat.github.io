@@ -19,6 +19,6 @@ export class GithubService {
   }
 
   getRepos(): Observable<Repo[]> {
-    return this.http.get<Repo[]>(`${this.URLS.BASE}${this.URLS.REPOS}`);
+    return this.http.get<Repo[]>(`${this.URLS.BASE}${this.URLS.REPOS}?sort=updated&per_page=3`);
   }
 }

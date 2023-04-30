@@ -1,22 +1,29 @@
-<div id="work" class="row vh-100 work-bg align-items-center">
-  <div class="col">
-    <div class="row text-center ">
-      <div class="col h2 my-5">
-        <i *ngIf="!(zen$ | async)" class="fas fa-spinner"></i> {{ (zen$ | async) ? (zen$ | async) : 'Loading Quote' }} - Github Zen
-      </div>
-    </div>
-    <div *ngFor="let repo of repos$ | async" class="row border border-2 rounded bg-dark m-3 p-3">
-      <diV class="col">
-        <a [href]="repo.html_url" target="_blank">
-          <div class="row">
-            <div class="col">{{ repo.name }}</div>
-            <div class="col text-end">{{ repo.language }}</div>
-          </div>
-          <div class="row py-2">
-            <div class="col">{{ repo.description }}</div>
-          </div>
-        </a>
-      </diV>
+<section id="work" class="flex flex-center vhw-100 work-bg">
+  <div>
+    <h1 *ngIf="zen$ | async as zen; else noZen">
+      <em><q>{{ zen }}</q></em> - Github Zen
+    </h1>
+    <ng-template #noZen>
+      <h1>
+        <q class="flex flex-center">
+          The API is down or overloaded, no biggie you can just go to
+          <a href="https://github.com/motheblackcat" target="_blank"><i class="fab fa-2x fa-github"></i></a>
+          to check my work.
+        </q>
+      </h1>
+    </ng-template>
+
+    <br>
+
+    <div *ngFor="let repo of repos$ | async" class="repo-block">
+      <a [href]="repo.html_url" target="_blank">
+        <p><b>{{ repo.name }}</b></p>
+        <p><q>{{ repo.description }}</q></p>
+        <p class="flex">
+          <i [style.background-color]="repo.language === 'TypeScript' ? '#287dc6' : '#e16d6d'"></i>
+          <em>{{ repo.language }}</em>
+        </p>
+      </a>
     </div>
   </div>
-</div>
+</section>
