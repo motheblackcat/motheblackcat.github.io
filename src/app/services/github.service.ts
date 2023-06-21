@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { URLS } from '../enums/url.enum';
@@ -19,6 +19,8 @@ export class GithubService {
   }
 
   getRepos(): Observable<Repo[]> {
-    return this.http.get<Repo[]>(`${this.URLS.BASE}${this.URLS.REPOS}?sort=updated&per_page=3`);
+    const url: string = `${this.URLS.BASE}${this.URLS.REPOS}`;
+    const params = { sort: 'updated', per_page: 4 };
+    return this.http.get<Repo[]>(url, { params });
   }
 }

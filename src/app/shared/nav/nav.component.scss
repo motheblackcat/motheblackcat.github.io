@@ -1,23 +1,36 @@
 nav {
   position: fixed;
-  right: 0;
+  top: 0;
+  width: 97%;
+  padding: 30px;
 
-  a {
-    margin: 20px;
-    width: 65px;
-    height: 65px;
-    border: 2px solid gray;
-    border-radius: 100%;
-
-    &:hover {
-      border: 2px solid white;
-      color: white;
+  #title {
+    .name {
+      font-size: 1.5em;
     }
-
   }
 
-  .active {
-    border: 2px solid white;
-    color: white;
+  #links {
+    a {
+      margin: 10px;
+      padding: 10px;
+      border: 2px solid gray;
+      border-radius: 5px;
+
+      &:hover {
+        border: 2px solid white;
+      }
+
+      i {
+        margin-right: 10px;
+        pointer-events: none;
+      }
+
+    }
+
+    .active {
+      color: white;
+      border: 2px solid white;
+    }
   }
 }

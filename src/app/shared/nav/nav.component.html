@@ -1,5 +1,11 @@
-<nav class="flex">
-  <a (click)="selectSection($event)" href="#home" class="flex flex-center"><i class="fas fa-lg fa-home"></i></a>
-  <a (click)="selectSection($event)" href="#work" class="flex flex-center"><i class="fas fa-lg fa-code"></i></a>
-  <a (click)="selectSection($event)" href="#contact" class="flex flex-center"><i class="fas fa-lg fa-at"></i></a>
+<nav class="flex flex-between">
+  <div id="title" class="flex flex-column flex-justify-center">
+    <div class="name">Morad El Hamdouni</div>
+    <div class="job">Web Developer Front</div>
+  </div>
+  <div id="links" class="flex">
+    <a href="#home" (click)="selectSection($event)"><i class="fas fa-home"></i>Home</a>
+    <a href="#work" (click)="selectSection($event)"><i class="fas fa-code"></i>Work</a>
+    <a href="#contact" (click)="selectSection($event)"><i class="fas fa-at"></i>Contact</a>
+  </div>
 </nav>

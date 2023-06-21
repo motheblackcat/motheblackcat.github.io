@@ -1,29 +1,26 @@
 <section id="work" class="flex flex-center vhw-100 work-bg">
-  <div>
-    <h1 *ngIf="zen$ | async as zen; else noZen">
-      <em><q>{{ zen }}</q></em> - Github Zen
-    </h1>
-    <ng-template #noZen>
-      <h1>
-        <q class="flex flex-center">
-          The API is down or overloaded, no biggie you can just go to
-          <a href="https://github.com/motheblackcat" target="_blank"><i class="fab fa-2x fa-github"></i></a>
-          to check my work.
-        </q>
-      </h1>
-    </ng-template>
-
-    <br>
-
-    <div *ngFor="let repo of repos$ | async" class="repo-block">
-      <a [href]="repo.html_url" target="_blank">
-        <p><b>{{ repo.name }}</b></p>
-        <p><q>{{ repo.description }}</q></p>
-        <p class="flex">
-          <i [style.background-color]="repo.language === 'TypeScript' ? '#287dc6' : '#e16d6d'"></i>
-          <em>{{ repo.language }}</em>
-        </p>
+  <div id="container">
+    <div class="flex flex-wrap flex-justify-center">
+      <a *ngFor="let repo of repos$ | async" class="repo-block" [href]="repo.html_url" target="_blank">
+        <p>{{ repo.name }}</p>
+        <p>{{ repo.description }}</p>
+        <div class="flex flex-between">
+          <p class="flex">
+            <i class="color-dot" [style.background-color]="getDotColor(repo.language)"></i>
+            <em>{{ repo.language }}</em>
+          </p>
+          <div>
+            <label *ngFor="let topic of repo.topics">{{ topic }}</label>
+          </div>
+        </div>
       </a>
     </div>
+
+    <!-- <q class="text-end" *ngIf="zen$ | async as zen; else noZen">{{ zen }} - Github Zen</q>
+    <ng-template #noZen>
+      <q class="flex flex-center">Oh the Github API seems to be down, however you can go there
+        <a href="https://github.com/motheblackcat" target="_blank"><i class="fab fa-2x fa-github"></i></a>
+        to check my work.</q>
+    </ng-template> -->
   </div>
 </section>
