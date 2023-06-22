@@ -18,9 +18,8 @@ export class WorkComponent implements OnInit {
   constructor(private gs: GithubService) { }
 
   // TODO: Test API requests overload prevention
-  // TODO: Re-add Github Zen
   ngOnInit() {
-    // this.zen$ = this.gs.getZen();
+    this.zen$ = this.gs.getZen();
     this.repos$ = this.gs.getRepos();
   }
 
@@ -33,7 +32,7 @@ export class WorkComponent implements OnInit {
         return 'yellow';
 
       case LANGUAGES.CSHARP:
-        return '#651471';
+        return '#178600';
 
       default:
         return 'gray';

@@ -10,10 +10,9 @@ import { NavComponent } from './shared/nav/nav.component';
 
 import { HomeComponent } from './components/home/home.component';
 import { WorkComponent } from './components/work/work.component';
-import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
-  declarations: [AppComponent, NavComponent, HomeComponent, WorkComponent, ContactComponent],
+  declarations: [AppComponent, NavComponent, HomeComponent, WorkComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

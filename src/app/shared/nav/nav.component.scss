@@ -1,36 +1,43 @@
 nav {
   position: fixed;
   top: 0;
-  width: 97%;
-  padding: 30px;
+  width: 100%;
 
-  #title {
+  section {
+    margin: 40px;
+
     .name {
-      font-size: 1.5em;
+      font-size: 1.2em;
     }
   }
 
-  #links {
-    a {
-      margin: 10px;
-      padding: 10px;
-      border: 2px solid gray;
-      border-radius: 5px;
+  a {
+    margin-left: 30px;
+    font-size: 1.2em;
+    color: grey;
+    outline: 0;
 
-      &:hover {
-        border: 2px solid white;
-      }
-
-      i {
-        margin-right: 10px;
-        pointer-events: none;
-      }
-
+    i {
+      margin-right: 5px;
     }
+  }
 
-    .active {
-      color: white;
-      border: 2px solid white;
+  .active {
+    color: white;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  section:first-child {
+    display: none;
+  }
+
+  section:last-child {
+    width: 100%;
+    justify-content: space-around;
+
+    a {
+      margin: 0;
     }
   }
 }

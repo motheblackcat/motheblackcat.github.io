@@ -11,11 +11,9 @@ export class NavComponent implements OnInit {
     (document.querySelector(`a[href="${hash}"]`) as HTMLLinkElement).className = 'active';
   }
 
-  // TODO: Fix url hash manual input (router)
   selectSection(event: Event) {
-    const links = document.querySelectorAll('#links>a');
+    const links = document.querySelectorAll('nav a');
     links.forEach(link => link.className = '');
-
-    (event.target as HTMLLinkElement).className = 'active';
+    (event.currentTarget as HTMLLinkElement).className = 'active';
   }
 }

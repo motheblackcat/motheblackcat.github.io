@@ -1,32 +1,33 @@
+import { LANGUAGES } from '../enums/languages.enum';
 import { Repo } from '../interfaces/repo.interface';
 
 export const repos: Repo[] = [
   {
-    name: 'vue-test',
-    description: 'A coding test on Vue.',
-    language: 'Vue',
-    html_url: 'https://google.com',
-    topics: ['vue']
-  },
-  {
     name: 'lk',
-    description: 'The test on unity you know',
-    language: 'Unity',
+    description: 'Unity 2D heroic-fantasy adventure game demo / sandbox project in Unity.',
+    language: LANGUAGES.CSHARP,
     html_url: 'https://google.com',
-    topics: []
+    topics: ['unity']
   },
   {
-    name: 'NgPowa',
-    description: 'The best frontend framework ever!',
-    language: 'Vue',
+    name: 'nhl-v2',
+    description: 'Character sheet for the tabletop rpg "Le Donjon de Naheulbeuk" mobile app made with Ionic (Angular) available on the Play Store.',
+    language: LANGUAGES.TYPESCRIPT,
+    html_url: 'https://google.com',
+    topics: ['ionic']
+  },
+  {
+    name: 'lolcheck',
+    description: 'A simple React test app with the riot api.',
+    language: LANGUAGES.TYPESCRIPT,
+    html_url: 'https://google.com',
+    topics: ['react', 'riot-api']
+  },
+  {
+    name: 'motheblackcat.github.io',
+    description: 'Angular project for a github page.',
+    language: LANGUAGES.TYPESCRIPT,
     html_url: 'https://google.com',
     topics: ['angular']
-  },
-  {
-    name: 'NgPowa',
-    description: 'The best frontend framework ever!',
-    language: 'TypeScript',
-    html_url: 'https://google.com',
-    topics: []
   }
 ];

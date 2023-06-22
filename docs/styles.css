@@ -5,7 +5,7 @@
 /*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].rules[0].oneOf[0].use[2]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[6].rules[1].use[0]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[6].rules[1].use[1]!./src/styles.scss?ngGlobalStyle (1) ***!
   \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/* Google Roboto font */
+/* Google font */
 html,
 body {
   font-family: "Roboto";
@@ -13,30 +13,24 @@ body {
   overflow: hidden;
   margin: 0;
   padding: 0;
-  background-color: black;
+  background: url('about-bg.png') center/cover fixed;
+  background-color: #0d1117;
   color: white;
-  /* Global links behaviour */
   /* Full size helper */
-  /* Flex helpers */
   /* Position helpers */
-  /* Text format */
+  /* Flex helpers */
+  /*Global link style */
   /* Icons */
   /* Backgrounds */
-}
-html a,
-body a {
-  text-decoration: none;
-  color: grey;
-  outline: 0;
-}
-html a:hover,
-body a:hover {
-  color: white;
 }
 html .vhw-100,
 body .vhw-100 {
   height: 100vh;
   width: 100vw;
+}
+html .m-auto,
+body .m-auto {
+  margin: auto;
 }
 html .flex,
 body .flex {
@@ -55,33 +49,22 @@ body .flex-center {
   justify-content: center;
   align-items: center;
 }
-html .flex-justify-center,
-body .flex-justify-center {
-  justify-content: center;
+html .flex-align-center,
+body .flex-align-center {
+  align-items: center;
 }
 html .flex-between,
 body .flex-between {
   justify-content: space-between;
 }
-html .mt-20,
-body .mt-20 {
-  margin-top: 20px;
+html a,
+body a {
+  text-decoration: none;
+  color: white;
 }
-html q,
-body q {
-  font-size: 1.5em;
-}
-html .text-end,
-body .text-end {
-  text-align: end;
-}
-html .angular,
-body .angular {
-  margin-left: 10px;
-}
-html .angular:hover,
-body .angular:hover {
-  color: #dd0031;
+html a i,
+body a i {
+  margin: 0 10px;
 }
 html .fa-linkedin:hover,
 body .fa-linkedin:hover {
@@ -89,19 +72,11 @@ body .fa-linkedin:hover {
 }
 html .fa-envelope:hover,
 body .fa-envelope:hover {
-  color: tan;
+  color: rgb(224, 205, 179);
 }
-html .home-bg,
-body .home-bg {
-  background: url('intro-bg.png') center/cover fixed;
-}
-html .work-bg,
-body .work-bg {
-  background: url('work-bg.png') center/cover fixed;
-}
-html .contact-bg,
-body .contact-bg {
-  background: url('contact-bg.png') center/cover fixed;
+html .bg-about,
+body .bg-about {
+  background: url('about-bg.png') center/cover fixed;
 }
 
 /*# sourceMappingURL=styles.css.map*/

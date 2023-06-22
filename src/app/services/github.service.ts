@@ -19,8 +19,12 @@ export class GithubService {
   }
 
   getRepos(): Observable<Repo[]> {
+    const sort = 'updated';
+    const per_page = 4;
+
     const url: string = `${this.URLS.BASE}${this.URLS.REPOS}`;
-    const params = { sort: 'updated', per_page: 4 };
+    const params = { sort, per_page };
+
     return this.http.get<Repo[]>(url, { params });
   }
 }
