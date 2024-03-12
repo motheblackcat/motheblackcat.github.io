@@ -4,7 +4,7 @@ import { GithubService } from 'src/app/services/github.service';
 
 import { Component, OnInit } from '@angular/core';
 import { repos } from 'src/app/mocks/repos.mock';
-import { LANGUAGES } from 'src/app/enums/languages.enum';
+import { LANGUAGES_COLORS, LANGUAGES_NAMES } from 'src/app/enums/languages.enum';
 
 @Component({
   selector: 'app-work',
@@ -25,17 +25,17 @@ export class WorkComponent implements OnInit {
 
   getDotColor(language: string): string {
     switch (language) {
-      case LANGUAGES.TYPESCRIPT:
-        return '#287dc6';
+      case LANGUAGES_NAMES.TYPESCRIPT:
+        return LANGUAGES_COLORS.TYPESCRIPT;
 
-      case LANGUAGES.JAVASCRIPT:
-        return 'yellow';
+      case LANGUAGES_NAMES.JAVASCRIPT:
+        return LANGUAGES_COLORS.JAVASCRIPT;
 
-      case LANGUAGES.CSHARP:
-        return '#178600';
+      case LANGUAGES_NAMES.CSHARP:
+        return LANGUAGES_COLORS.CSHARP;
 
       default:
-        return 'gray';
+        return LANGUAGES_COLORS.UNKNOWN;
     }
   }
 }
