@@ -15,7 +15,7 @@
         <div class="flex flex-between">
           <a [href]="repo.html_url" target="_blank"><b>{{ repo.name }}</b></a>
           <div>
-            <label *ngFor="let topic of repo.topics">{{ topic }}</label>
+            <div *ngFor="let topic of repo.topics">{{ topic }}</div>
           </div>
         </div>
         <p>{{ repo.description }}</p>
