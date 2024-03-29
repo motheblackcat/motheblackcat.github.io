@@ -1,21 +1,35 @@
 <section id="work">
 
   @if (zen$ | async; as zen) {
-  <article>
+  <h1>
     <q>{{ zen }}</q> <i>- Github Zen</i>
-  </article>
+  </h1>
+  } @else {
+  <h1>Oops! The Github Zen API seems to be down or overloaded!</h1>
   }
 
   @if (repos$ | async; as repos) {
+  <div class="flex flex-wrap flex-center">
     @for (repo of repos; track $index) {
-      <article>
-        <a [href]="repo.html_url" target="_blank"><b>{{ repo.name }}</b></a>
-        <label *ngFor="let topic of repo.topics">{{ topic }}</label>
-        <p>{{ repo.description }}</p>
+    <article>
+      <header class="flex flex-between">
+        <a [href]="repo.html_url"
+           target="_blank"><b>{{ repo.name }}</b></a>
+        @for (topic of repo.topics; track $index) { <div class="topic">{{ topic }}</div> }
+      </header>
+      <p>{{ repo.description }}</p>
+      @if (repo.homepage) {
+      <p><a [href]="repo.homepage">{{ repo.homepage }}</a></p>
+      }
+      <footer class="flex">
         <div class="color-dot" [style.background-color]="getDotColor(repo.language)"></div>
         <i>{{ repo.language }}</i>
-      </article>
+      </footer>
+    </article>
     }
+  </div>
+  } @else {
+  <h1>Oops! The Github Repos API seems to be down or overloaded!</h1>
   }
 
 </section>

@@ -1,3 +1,40 @@
-.bg-red {
-    background-color: red;
-}
+ /* Full screen helper */
+  .vhw-100 {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  /* Position helpers */
+  .m-auto {
+    margin: auto;
+  }
+
+  /* Flex helpers */
+  .flex {
+    display: flex;
+  }
+
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  .flex-column {
+    flex-direction: column;
+  }
+
+  .flex-center {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .flex-align-center {
+    align-items: center;
+  }
+
+  .flex-between {
+    justify-content: space-between;
+  }
+
+  .flex-around {
+    justify-content: space-around;
+  }

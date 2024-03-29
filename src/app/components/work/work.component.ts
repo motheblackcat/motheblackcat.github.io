@@ -2,7 +2,7 @@ import { Observable, of } from 'rxjs';
 import { Repo } from 'src/app/interfaces/repo.interface';
 import { GithubService } from 'src/app/services/github.service';
 
-import { Component, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { repos } from 'src/app/mocks/repos.mock';
 import { LANGUAGES_COLORS, LANGUAGES_NAMES } from 'src/app/enums/languages.enum';
 
@@ -11,17 +11,14 @@ import { LANGUAGES_COLORS, LANGUAGES_NAMES } from 'src/app/enums/languages.enum'
   templateUrl: './work.component.html',
   styleUrls: ['./work.component.scss']
 })
-export class WorkComponent implements OnInit {
-  zen$: Observable<string> | undefined;
+export class WorkComponent {
+  gs = inject(GithubService);
+
+  // TODO: Add API requests debounce / throttle to prevent overload
+  // zen$: Observable<string> | undefined = this.gs.getZen();
+  // repos$: Observable<Repo[]> | undefined = this.gs.getRepos();
+  zen$: Observable<string> | undefined = of('Mock!');
   repos$: Observable<Repo[]> | undefined = of(repos);
-
-  constructor(private gs: GithubService) { }
-
-  // TODO: Test API requests overload prevention
-  ngOnInit() {
-    this.zen$ = this.gs.getZen();
-    this.repos$ = this.gs.getRepos();
-  }
 
   getDotColor(language: string): string {
     switch (language) {

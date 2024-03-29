@@ -1,47 +1,25 @@
-// article {
-//     font-size: 1.2em;
-//     text-align: center;
-//     margin-bottom: 40px;
+section {
+    background-color: #0d1117;
 
-//     a {
-//         text-decoration: underline;
-//     }
-// }
+    article {
+        width: 40%;
+        min-height: 150px;
+        border: 1px solid white;
+        border-radius: 25px;
+        padding: 20px;
 
-// .card {
-//     border: white solid 1px;
-//     border-radius: 6px;
-//     margin: 8px;
-//     padding: 16px;
-//     width: 40%;
-//     min-height: 120px;
+        .topic {
+            text-transform: capitalize;
+            border: 1px solid white;
+            border-radius: 25px;
+            padding: 5px 10px;
+        }
 
-//     a {
-//         color: rgb(47, 129, 247);
-//     }
-
-//     label {
-//         border: white solid 1px;
-//         border-radius: 24px;
-//         padding: 2px 7px;
-//         margin-left: 10px;
-//         text-transform: capitalize;
-//     }
-
-    .color-dot {
-        width: 15px;
-        height: 15px;
-        margin-right: 10px;
-        border-radius: 100%;
+        .color-dot {
+            width: 15px;
+            height: 15px;
+            margin-right: 10px;
+            border-radius: 100%;
+        }
     }
-// }
-
-// @media screen and (max-width: 800px) {
-//     .card {
-//         width: 100%;
-
-//         &:last-child {
-//             display: none;
-//         }
-//     }
-// }
+}

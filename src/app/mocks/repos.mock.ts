@@ -7,6 +7,7 @@ export const repos: Repo[] = [
     description: 'Unity 2D heroic-fantasy adventure game demo / sandbox project in Unity.',
     language: LANGUAGES_NAMES.CSHARP,
     html_url: 'https://google.com',
+    homepage: 'https://google.com',
     topics: ['unity']
   },
   {
@@ -14,6 +15,7 @@ export const repos: Repo[] = [
     description: 'Character sheet for the tabletop rpg "Le Donjon de Naheulbeuk" mobile app made with Ionic (Angular) available on the Play Store.',
     language: LANGUAGES_NAMES.TYPESCRIPT,
     html_url: 'https://google.com',
+    homepage: 'https://google.com',
     topics: ['ionic']
   },
   {
@@ -21,13 +23,15 @@ export const repos: Repo[] = [
     description: 'A simple React test app with the riot api.',
     language: LANGUAGES_NAMES.TYPESCRIPT,
     html_url: 'https://google.com',
-    topics: ['react', 'riot-api']
+    homepage: 'https://google.com',
+    topics: ['react']
   },
   {
     name: 'motheblackcat.github.io',
     description: 'Angular project for a github page.',
     language: LANGUAGES_NAMES.TYPESCRIPT,
     html_url: 'https://google.com',
+    homepage: 'https://google.com',
     topics: ['angular']
   }
 ];
