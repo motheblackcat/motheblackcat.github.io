@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { URLS } from '../enums/url.enum';
 import { Repo } from '../interfaces/repo.interface';
@@ -10,20 +10,18 @@ import { Repo } from '../interfaces/repo.interface';
   providedIn: 'root',
 })
 export class GithubService {
-  URLS = URLS;
-
-  constructor(private http: HttpClient) { }
-
+  http = inject(HttpClient);
+  
   getZen(): Observable<string> {
-    return this.http.get(`${this.URLS.BASE}${this.URLS.ZEN}`, { responseType: 'text' });
+    return this.http.get(`${URLS.BASE}${URLS.ZEN}`, { responseType: 'text' });
   }
 
   getRepos(): Observable<Repo[]> {
     const sort = 'updated';
-    const per_page = 4;
+    const perPage = 4;
 
-    const url: string = `${this.URLS.BASE}${this.URLS.REPOS}`;
-    const params = { sort, per_page };
+    const url: string = `${URLS.BASE}${URLS.REPOS}`;
+    const params = { sort, perPage };
 
     return this.http.get<Repo[]>(url, { params });
   }

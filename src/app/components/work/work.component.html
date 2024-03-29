@@ -1,29 +1,21 @@
-<section id="work" class="flex vhw-100">
-  <div class="m-auto">
-    <article *ngIf="zen$ | async as zen; else noZen" class="quote">
-      <q>{{ zen }}</q> <i>- Github Zen</i>
-    </article>
-    <ng-template #noZen>
-      <article>
-        The Github API seems to be down, you can check my work directly on
-        <a href="https://github.com/motheblackcat" target="_blank">Github.</a>
-      </article>
-    </ng-template>
+<section id="work">
 
-    <div class="flex flex-center flex-wrap">
-      <div *ngFor="let repo of repos$ | async" class="flex flex-column flex-between card">
-        <div class="flex flex-between">
-          <a [href]="repo.html_url" target="_blank"><b>{{ repo.name }}</b></a>
-          <div>
-            <div *ngFor="let topic of repo.topics">{{ topic }}</div>
-          </div>
-        </div>
+  @if (zen$ | async; as zen) {
+  <article>
+    <q>{{ zen }}</q> <i>- Github Zen</i>
+  </article>
+  }
+
+  @if (repos$ | async; as repos) {
+    @for (repo of repos; track $index) {
+      <article>
+        <a [href]="repo.html_url" target="_blank"><b>{{ repo.name }}</b></a>
+        <label *ngFor="let topic of repo.topics">{{ topic }}</label>
         <p>{{ repo.description }}</p>
-        <div class="flex flex-align-center">
-          <div class="color-dot" [style.background-color]="getDotColor(repo.language)"></div>
-          <i>{{ repo.language }}</i>
-        </div>
-      </div>
-    </div>
-  </div>
+        <div class="color-dot" [style.background-color]="getDotColor(repo.language)"></div>
+        <i>{{ repo.language }}</i>
+      </article>
+    }
+  }
+
 </section>

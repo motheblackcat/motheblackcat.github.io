@@ -1,75 +1,80 @@
 /* Google font */
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto");
 
 html,
 body {
   font-family: "Roboto";
-  scroll-behavior: smooth;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-    background: url("assets/about-bg.png") center / cover fixed;
-    background-color: #0d1117;
+  // scroll-behavior: smooth;
+  // overflow: hidden;
+  // margin: 0;
+  // padding: 0;
+  // background: url("assets/about-bg.png") center / cover fixed;
+  // background-color: #0d1117;
   color: white;
+  background-color: black;
 
-  /* Full size helper */
-  .vhw-100 {
-    height: 100vh;
-    width: 100vw;
-  }
+  // /* Full size helper */
+  // .vhw-100 {
+  //   height: 100vh;
+  //   width: 100vw;
+  // }
 
-  /* Position helpers */
-  .m-auto {
-    margin: auto;
-  }
+  // /* Position helpers */
+  // .m-auto {
+  //   margin: auto;
+  // }
 
-  /* Flex helpers */
+  // /* Flex helpers */
   .flex {
     display: flex;
   }
 
-  .flex-wrap {
-    flex-wrap: wrap;
-  }
+  // .flex-wrap {
+  //   flex-wrap: wrap;
+  // }
 
   .flex-column {
     flex-direction: column;
   }
 
-  .flex-center {
-    justify-content: center;
-    align-items: center;
-  }
+  // .flex-center {
+  //   justify-content: center;
+  //   align-items: center;
+  // }
 
   .flex-align-center {
     align-items: center;
   }
 
-  .flex-between {
-    justify-content: space-between;
+  // .flex-between {
+  //   justify-content: space-between;
+  // }
+
+  .flex-around {
+    justify-content: space-around;
   }
 
-  /*Global link style */
-  a {
-    text-decoration: none;
-    color: white;
+  // /*Global link style */
+  // a {
+  //   text-decoration: none;
+  //   color: white;
 
-    i {
-      margin: 0 10px;
-    }
-  }
+  //   i {
+  //     margin: 0 10px;
+  //   }
+  // }
 
-  /* Icons */
-  .fa-linkedin:hover {
-    color: #1a85e9;
-  }
+  // /* Icons */
+  // .fa-linkedin:hover {
+  //   color: #1a85e9;
+  // }
 
-  .fa-envelope:hover {
-    color: rgb(224, 205, 179);
-  }
+  // .fa-envelope:hover {
+  //   color: rgb(224, 205, 179);
+  // }
 
-  /* Backgrounds */
-  .bg-about {
-    background: url("assets/about-bg.png") center / cover fixed;
-  }
+  // /* Backgrounds */
+  // .bg-about {
+  //   background: url("assets/about-bg.png") center / cover fixed;
+  // }
 }
