@@ -1,10 +1,11 @@
 <nav class="flex flex-between">
-  <section class="flex flex-column flex-justify-center">
-    <div class="name">Morad El Hamdouni</div>
-    <div>Web Developer Front</div>
-  </section>
-  <section class="flex flex-center">
-    <a href="#home" (click)="selectSection($event)"><i class="fas fa-home"></i>About</a>
-    <a href="#work" (click)="selectSection($event)"><i class="fas fa-code"></i>Work</a>
-  </section>
+  <div class="flex flex-align-center">
+      Morad El Hamdouni
+      <img src="assets/logo_angular.svg" alt="logo angular" width="20px" height="20px">
+      Developer
+  </div>
+  <div>
+    <a href="#home" (click)="selectSection($event)">About</a>
+    <a href="#work" (click)="selectSection($event)">Work</a>
+  </div>
 </nav>

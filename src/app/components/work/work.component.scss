@@ -1,16 +1,24 @@
 section {
     background-color: #0d1117;
+    padding: 20px;
+
+    h1 {
+        text-align: center;
+    }
 
     article {
         width: 40%;
         min-height: 150px;
-        border: 1px solid white;
-        border-radius: 25px;
+        border: 1px solid #30363d;
+        border-radius: 10px;
+        margin: 10px;
         padding: 20px;
 
         .topic {
+            color: #30363d;
+            font-size: 0.8em;
             text-transform: capitalize;
-            border: 1px solid white;
+            border: 1px solid #30363d;
             border-radius: 25px;
             padding: 5px 10px;
         }

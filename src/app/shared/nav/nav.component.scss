@@ -2,42 +2,20 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
+  font-size: 1.2em;
 
-  section {
-    margin: 40px;
-
-    .name {
-      font-size: 1.2em;
-    }
+  div {
+    padding: 20px;
   }
 
   a {
-    margin-left: 30px;
-    font-size: 1.2em;
     color: grey;
     outline: 0;
-
-    i {
-      margin-right: 5px;
-    }
+    text-decoration: none;
+    margin-left: 30px;
   }
 
   .active {
     color: white;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  section:first-child {
-    display: none;
-  }
-
-  section:last-child {
-    width: 100%;
-    justify-content: space-around;
-
-    a {
-      margin: 0;
-    }
   }
 }

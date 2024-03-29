@@ -1,9 +1,7 @@
-<section id="work">
+<section id="work" class="vh-100">
 
   @if (zen$ | async; as zen) {
-  <h1>
-    <q>{{ zen }}</q> <i>- Github Zen</i>
-  </h1>
+  <h1><q>{{ zen }}</q> <i>- Github Zen</i></h1>
   } @else {
   <h1>Oops! The Github Zen API seems to be down or overloaded!</h1>
   }
@@ -11,19 +9,19 @@
   @if (repos$ | async; as repos) {
   <div class="flex flex-wrap flex-center">
     @for (repo of repos; track $index) {
-    <article>
-      <header class="flex flex-between">
-        <a [href]="repo.html_url"
-           target="_blank"><b>{{ repo.name }}</b></a>
-        @for (topic of repo.topics; track $index) { <div class="topic">{{ topic }}</div> }
+    <article class="flex flex-column flex-justify-center flex-between">
+      <header class="flex flex-align-center flex-between">
+          <a [href]="repo.html_url"
+            target="_blank"><b>{{ repo.name }}</b></a>
+          @for (topic of repo.topics; track $index) { <div class="topic">{{ topic }}</div> }
       </header>
-      <p>{{ repo.description }}</p>
-      @if (repo.homepage) {
-      <p><a [href]="repo.homepage">{{ repo.homepage }}</a></p>
-      }
+      <div>
+        <p>{{ repo.description }}</p>
+        <p><a [href]="repo.homepage">{{ repo.homepage }}</a></p>
+      </div>
       <footer class="flex">
-        <div class="color-dot" [style.background-color]="getDotColor(repo.language)"></div>
-        <i>{{ repo.language }}</i>
+          <div class="color-dot" [style.background-color]="getDotColor(repo.language)"></div>
+          <i>{{ repo.language }}</i>
       </footer>
     </article>
     }
