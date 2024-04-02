@@ -1,15 +1,8 @@
 <section id="work" class="vh-100 flex flex-center">
   <!-- TODO: Error message display -->
   <div class="grid-container">
-    <!-- <div>cell 1</div>
-    <div>cell 2</div>
-    <div>cell 3</div>
-    <div>cell 4</div>
-    <div>cell 5</div>
-    <div>cell 6</div> -->
-
     @if (zen$ | async; as zen) {
-    <h1><q>{{ zen }}</q> <i>- Github Zen</i></h1>
+      <h1 class="grid-header"><q>{{ zen }}</q> <i>- Github Zen</i></h1>
     }
 
     @if (repos$ | async; as repos) {
@@ -17,9 +10,8 @@
         <app-card></app-card>
       }
     }
-    <!-- @else {
-    <h1>Oops! The Github Repos API seems to be down please go directly to <a href="https://github.com/motheblackcat" target="_blank">Github</a> to check some of my work!</h1>
-    } -->
+    @else {
+      <h1 class="grid-header">Oops! The Github Repos API seems to be down please go directly to <a href="https://github.com/motheblackcat" target="_blank">Github</a> to check some of my work!</h1>
+    }
   </div>
-
 </section>
