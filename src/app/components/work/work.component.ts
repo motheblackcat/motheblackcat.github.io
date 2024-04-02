@@ -3,7 +3,7 @@ import { Repo } from 'src/app/interfaces/repo.interface';
 import { GithubService } from 'src/app/services/github.service';
 
 import { Component, inject } from '@angular/core';
-import { repos } from 'src/app/mocks/repos.mock';
+import { mockRepos } from 'src/app/mocks/repos.mock';
 import { LANGUAGES_COLORS, LANGUAGES_NAMES } from 'src/app/enums/languages.enum';
 
 @Component({
@@ -18,7 +18,7 @@ export class WorkComponent {
   // zen$: Observable<string> | undefined = this.gs.getZen();
   // repos$: Observable<Repo[]> | undefined = this.gs.getRepos();
   zen$: Observable<string> | undefined = of('Mock!');
-  repos$: Observable<Repo[]> | undefined = of(repos);
+  repos$: Observable<Repo[]> | undefined = of(mockRepos);
 
   getDotColor(language: string): string {
     switch (language) {

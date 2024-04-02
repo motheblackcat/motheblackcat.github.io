@@ -1,21 +1,22 @@
-nav {
+header {
   position: fixed;
   top: 0;
   width: 100%;
   font-size: 1.2em;
+  padding: 20px;
+  box-sizing: border-box;
 
-  div {
-    padding: 20px;
-  }
+  nav {
+    width: 80%;
 
-  a {
-    color: grey;
-    outline: 0;
-    text-decoration: none;
-    margin-left: 30px;
-  }
-
-  .active {
-    color: white;
+    a {
+      color: grey;
+      outline: 0;
+      text-decoration: none;
+    }
+  
+    .active {
+      color: white;
+    }
   }
 }

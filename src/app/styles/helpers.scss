@@ -1,43 +1,46 @@
- /* Full screen helper */
-  .vh-100 {
-    height: 100vh;
-  }
+ /* Full screen height helper */
+ .vh-100 {
+   height: 100vh;
+ }
 
-  /* Position helpers */
-  .m-auto {
-    margin: auto;
-  }
+ /* Flex helpers */
+ .flex {
+   display: flex;
+ }
 
-  /* Flex helpers */
-  .flex {
-    display: flex;
-  }
+ .flex-wrap {
+   flex-wrap: wrap;
+ }
 
-  .flex-wrap {
-    flex-wrap: wrap;
-  }
+ .flex-column {
+   flex-direction: column;
+ }
 
-  .flex-column {
-    flex-direction: column;
-  }
+ .flex-center {
+   justify-content: center;
+   align-items: center;
+ }
 
-  .flex-center {
-    justify-content: center;
-    align-items: center;
-  }
+ .flex-align-center {
+   align-items: center;
+ }
 
-  .flex-align-center {
-    align-items: center;
-  }
+ .flex-justify-center {
+   justify-content: center;
+ }
 
-  .flex-justify-center {
-    justify-content: center;
-  }
+ .flex-between {
+   justify-content: space-between;
+ }
 
-  .flex-between {
-    justify-content: space-between;
-  }
+ .flex-around {
+   justify-content: space-around;
+ }
 
-  .flex-around {
-    justify-content: space-around;
-  }
+ .flex-grow-2 {
+   flex-grow: 2;
+ }
+
+ .flex-gap-20 {
+   gap: 20px;
+ }
