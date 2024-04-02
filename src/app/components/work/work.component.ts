@@ -1,13 +1,17 @@
 import { Observable, of } from 'rxjs';
+import { LANGUAGES_COLORS, LANGUAGES_NAMES } from 'src/app/enums/languages.enum';
 import { Repo } from 'src/app/interfaces/repo.interface';
+import { mockRepos } from 'src/app/mocks/repos.mock';
 import { GithubService } from 'src/app/services/github.service';
 
 import { Component, inject } from '@angular/core';
-import { mockRepos } from 'src/app/mocks/repos.mock';
-import { LANGUAGES_COLORS, LANGUAGES_NAMES } from 'src/app/enums/languages.enum';
+import { CommonModule } from '@angular/common';
+import { CardComponent } from './card/card.component';
 
 @Component({
   selector: 'app-work',
+  standalone: true,
+  imports: [CommonModule, CardComponent],
   templateUrl: './work.component.html',
   styleUrls: ['./work.component.scss']
 })
