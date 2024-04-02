@@ -7,11 +7,11 @@
 
     @if (repos$ | async; as repos) {
       @for (repo of repos; track $index) {
-        <app-card></app-card>
+        <app-card [repo]="repo"></app-card>
       }
     }
     @else {
-      <h1 class="grid-header">Oops! The Github Repos API seems to be down please go directly to <a href="https://github.com/motheblackcat" target="_blank">Github</a> to check some of my work!</h1>
+      <h1 class="grid-header">Oops! The Github Repos API seems to be down... Please go directly to <a href="https://github.com/motheblackcat" target="_blank">Github</a> to check some of my work!</h1>
     }
   </div>
 </section>
