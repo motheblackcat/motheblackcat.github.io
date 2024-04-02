@@ -5,8 +5,9 @@ section {
         display: grid;
         width: 80%;
         grid-template-columns: 1fr 1fr;
+        gap: 20px;
 
-        .grid-header {
+        .item-header {
             grid-column: 1 / 3;
             justify-self: center;
         }

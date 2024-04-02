@@ -1,14 +1,12 @@
-<article class="flex flex-column flex-justify-center flex-between">
-  <header class="flex flex-align-center flex-between">
-    <a [href]="repo()?.html_url" target="_blank"><b>{{ repo()?.name }}</b></a>
-    @for (topic of repo()?.topics; track $index) { <div class="topic">{{ topic }}</div> }
-  </header>
-  <div>
-    <p>{{ repo()?.description }}</p>
-    <p><a [href]="repo()?.homepage">{{ repo()?.homepage }}</a></p>
-  </div>
-  <footer class="flex">
-    <div class="color-dot" [style.background-color]="getDotColor(repo()?.language)"></div>
+<div class="grid-container">
+  <a [href]="repo()?.html_url" target="_blank"><b>{{ repo()?.name }}</b></a>
+  <div class="item-topic">{{ repo()?.topics }}</div>
+  <div class="item-description">{{ repo()?.description }}</div>
+  <a class="item-external-url" [href]="repo()?.homepage" target="_blank">{{ repo()?.homepage }}</a>
+  <div class="item-dot">
+    <svg viewBox="0 0 15 15" width="15" height="15">
+      <circle cx="7.5" cy="7.5" r="7.5" [style.fill]="getDotColor(repo()?.language)" />
+    </svg>
     <i>{{ repo()?.language }}</i>
-  </footer>
-</article>
+  </div>
+</div>
