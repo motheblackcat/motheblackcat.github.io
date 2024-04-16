@@ -1,12 +1,14 @@
-<div class="grid-container">
-  <a [href]="repo()?.html_url" target="_blank"><b>{{ repo()?.name }}</b></a>
-  <div class="item-topic">{{ repo()?.topics }}</div>
-  <div class="item-description">{{ repo()?.description }}</div>
-  <a class="item-external-url" [href]="repo()?.homepage" target="_blank">{{ repo()?.homepage }}</a>
-  <div class="item-dot">
+<main class="flex flex-column flex-between">
+  <header class="flex flex-between flex-align-center">
+    <a [href]="repo()?.html_url" target="_blank"><b>{{ repo()?.name }}</b></a>
+    <code>{{ repo()?.topics }}</code>
+  </header>
+  <p>{{ repo()?.description }}</p>
+  <a class="url" [href]="repo()?.homepage" target="_blank">{{ repo()?.homepage }}</a>
+  <footer class="flex flex-align-center">
     <svg viewBox="0 0 15 15" width="15" height="15">
       <circle cx="7.5" cy="7.5" r="7.5" [style.fill]="getDotColor(repo()?.language)" />
     </svg>
-    <i>{{ repo()?.language }}</i>
-  </div>
-</div>
+    <code>{{ repo()?.language }}</code>
+  </footer>
+</main>
