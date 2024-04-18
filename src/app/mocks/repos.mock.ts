@@ -1,7 +1,7 @@
 import { LANGUAGES_NAMES } from '../enums/languages.enum';
-import { Repo } from '../interfaces/repo.interface';
+import { IRepo } from '../interfaces/repo.interface';
 
-export const mockRepos: Repo[] = [
+export const mockRepos: IRepo[] = [
   {
     name: 'lk',
     description: 'Unity 2D heroic-fantasy adventure game demo / sandbox project in Unity.',

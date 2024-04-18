@@ -1,17 +1,28 @@
+import { CommonModule } from '@angular/common';
+import { Component, effect, inject, input } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { LANGUAGES_COLORS, LANGUAGES_NAMES } from 'src/app/enums/languages.enum';
-import { Repo } from 'src/app/interfaces/repo.interface';
-
-import { Component, input } from '@angular/core';
+import { ILatestRelease } from 'src/app/interfaces/latest_release.interface';
+import { IRepo } from 'src/app/interfaces/repo.interface';
+import { GithubService } from 'src/app/services/github.service';
 
 @Component({
   selector: 'app-card',
   standalone: true,
+  imports: [CommonModule],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
-  // TODO: Make sure it's non-null or undefined value
-  repo = input<Repo>();
+  repo = input<IRepo>();
+  gs = inject(GithubService);
+
+  latestRelease$: Observable<ILatestRelease>  = of();
+  cSharp = LANGUAGES_NAMES.CSHARP;
+
+  constructor() {
+    effect(() => this.latestRelease$ = this.gs.getLatestRelease(this.repo()?.name));
+  }
 
   getDotColor(language: string | undefined): string {
     switch (language) {

@@ -1,12 +1,8 @@
-import { Observable, of } from 'rxjs';
-import { Repo } from 'src/app/interfaces/repo.interface';
-// TODO: Remove mock import when uneeded
-import { mockRepos } from 'src/app/mocks/repos.mock';
-import { GithubService } from 'src/app/services/github.service';
-
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-
+import { Observable } from 'rxjs';
+import { IRepo } from 'src/app/interfaces/repo.interface';
+import { GithubService } from 'src/app/services/github.service';
 import { CardComponent } from './card/card.component';
 
 @Component({
@@ -19,11 +15,7 @@ import { CardComponent } from './card/card.component';
 export class WorkComponent {
   gs = inject(GithubService);
 
-  // zen$: Observable<string> | undefined = this.gs.getZen();
-  // repos$: Observable<Repo[]> | undefined = this.gs.getRepos();
-  
   // TODO: Add API requests debounce / throttle / rate limit to prevent overload
-  // TODO: Check return type from github API Observable<string | undefined> OR Observable<string> | undefined
-  zen$: Observable<string | undefined> = of('Hey there!');
-  repos$: Observable<Repo[]| undefined> = of(mockRepos);
+  zen$: Observable<string> = this.gs.getZen();
+  repos$: Observable<IRepo[]> = this.gs.getRepos();
 }
