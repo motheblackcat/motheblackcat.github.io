@@ -1,8 +1,6 @@
-import { Observable } from 'rxjs';
-
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-
+import { Observable } from 'rxjs';
 import { URLS } from '../enums/url.enum';
 import { ILatestRelease } from '../interfaces/latest_release.interface';
 import { IRepo } from '../interfaces/repo.interface';
@@ -18,9 +16,10 @@ export class GithubService {
   }
 
   getRepos(): Observable<IRepo[]> {
-    const sort = 'updated';
-    const perPage = 4;
-    const params = { sort, perPage };
+    // enum SORT_PARAMS {
+    //   UPDATED = 'updated'
+    // }
+    // const params = { sort: SORT_PARAMS.UPDATED, perPage: 4 };
 
     const url: string = `${URLS.BASE}${URLS.REPOS}`;
     return this.http.get<IRepo[]>(url);
