@@ -1,42 +1,5 @@
-// article {
-//     margin: 20px;
-
-//     &:first-child {
-//         width: 50%;
-//     }
-
-//     div {
-//         &:first-child {
-//             font-size: 1.8em;
-//         }
-
-//         &:nth-child(2) {
-//             font-size: 1.2em;
-//         }
-//     }
-
-//     p:last-child:after {
-//         content: " ▶";
-//     }
-// }
-
-// .grid {
-//     display: grid;
-//     grid-template-columns: repeat(4, 50px);
-//     grid-column-gap: 30px;
-//     grid-row-gap: 30px;
-// }
-
-// @media screen and (max-width: 800px) {
-//     article {
-//         text-align: justify;
-
-//         &:first-child {
-//             width: 100%;
-//         }
-
-//         p:last-child:after {
-//             content: " ▼";
-//         }
-//     }
-// }
+@media(max-width: 850px) {
+    section {
+        padding: 20px;
+    }
+}

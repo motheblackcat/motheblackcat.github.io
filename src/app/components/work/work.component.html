@@ -1,7 +1,10 @@
-<section id="work" class="vh-100 flex flex-center">
+<section id="work">
   <div class="grid-container">
     @if (zen$ | async; as zen) {
       <h1><q>{{ zen }}</q> <i>- Github Zen</i></h1>
+    }
+    @else {
+      <h1><q>No Github Zen quotes showed up it seems.</q></h1>
     }
 
     @if (repos$ | async; as repos) {

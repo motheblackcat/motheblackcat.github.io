@@ -8,10 +8,6 @@
    display: flex;
  }
 
- .flex-wrap {
-   flex-wrap: wrap;
- }
-
  .flex-column {
    flex-direction: column;
  }
@@ -29,16 +25,16 @@
    justify-content: center;
  }
 
- .flex-between {
+ .flex-justify-between {
    justify-content: space-between;
  }
 
- .flex-around {
+ .flex-justify-around {
    justify-content: space-around;
  }
 
- .flex-grow-2 {
-   flex-grow: 2;
+ .flex-gap-10 {
+   gap: 10px;
  }
 
  .flex-gap-20 {

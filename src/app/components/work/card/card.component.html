@@ -1,5 +1,5 @@
-<main class="flex flex-column flex-between">
-  <header class="flex flex-between flex-align-center">
+<main class="flex flex-column flex-justify-between">
+  <header class="flex flex-justify-between flex-align-center">
     <a [href]="repo()?.html_url" target="_blank"><b>{{ repo()?.name }}</b></a>
     <div>
       @for (topic of repo()?.topics; track $index) {

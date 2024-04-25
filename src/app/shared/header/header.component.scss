@@ -3,12 +3,10 @@ header {
   top: 0;
   width: 100%;
   font-size: 1.2em;
-  padding: 20px 0;
+  padding: 40px 20px;
   box-sizing: border-box;
 
   nav {
-    width: 80%;
-
     a {
       color: grey;
       outline: 0;
@@ -18,5 +16,10 @@ header {
     .active {
       color: white;
     }
+  }
+
+  @media (max-width: 850px) {
+    font-size: 1em;
+    padding: 20px;
   }
 }
