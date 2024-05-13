@@ -1,0 +1,25 @@
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  font-size: 1.2em;
+  padding: 40px 20px;
+  box-sizing: border-box;
+
+  nav {
+    a {
+      color: grey;
+      outline: 0;
+      text-decoration: none;
+    }
+  
+    .active {
+      color: white;
+    }
+  }
+
+  @media (max-width: 850px) {
+    font-size: 1em;
+    padding: 20px;
+  }
+}

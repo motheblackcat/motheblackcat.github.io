@@ -1,0 +1,22 @@
+<main class="flex flex-column flex-justify-between">
+  <header class="flex flex-justify-between flex-align-center">
+    <a [href]="repo()?.html_url" target="_blank"><b>{{ repo()?.name }}</b></a>
+    <div>
+      @for (topic of repo()?.topics; track $index) {
+      <code>{{ topic }}</code>
+      }
+    </div>
+  </header>
+  <p>{{ repo()?.description }}</p>
+  @if (repo()?.language === cSharp && (latestRelease$ | async); as latestRelease) {
+  <a class="url" [href]="latestRelease.assets[0].browser_download_url">{{ latestRelease.assets[0].browser_download_url }}</a>
+  } @else {
+  <a class="url" [href]="repo()?.homepage" target="_blank">{{ repo()?.homepage }}</a>
+  }
+  <footer class="flex flex-align-center">
+    <svg viewBox="0 0 15 15" width="15" height="15">
+      <circle cx="7.5" cy="7.5" r="7.5" [style.fill]="getDotColor(repo()?.language)" />
+    </svg>
+    <code>{{ repo()?.language }}</code>
+  </footer>
+</main>

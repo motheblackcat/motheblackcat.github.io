@@ -1,30 +1,31 @@
-import { Observable } from 'rxjs';
-
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-
+import { Injectable, inject } from '@angular/core';
+import { Observable } from 'rxjs';
 import { URLS } from '../enums/url.enum';
-import { Repo } from '../interfaces/repo.interface';
+import { ILatestRelease } from '../interfaces/latest_release.interface';
+import { IRepo } from '../interfaces/repo.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class GithubService {
-  URLS = URLS;
-
-  constructor(private http: HttpClient) { }
-
+  http = inject(HttpClient);
+  
   getZen(): Observable<string> {
-    return this.http.get(`${this.URLS.BASE}${this.URLS.ZEN}`, { responseType: 'text' });
+    return this.http.get(`${URLS.BASE}${URLS.ZEN}`, { responseType: 'text' });
   }
 
-  getRepos(): Observable<Repo[]> {
-    const sort = 'updated';
-    const per_page = 4;
+  getRepos(): Observable<IRepo[]> {
+    // enum SORT_PARAMS {
+    //   UPDATED = 'updated'
+    // }
+    // const params = { sort: SORT_PARAMS.UPDATED, perPage: 4 };
 
-    const url: string = `${this.URLS.BASE}${this.URLS.REPOS}`;
-    const params = { sort, per_page };
+    const url: string = `${URLS.BASE}${URLS.REPOS}`;
+    return this.http.get<IRepo[]>(url);
+  }
 
-    return this.http.get<Repo[]>(url, { params });
+  getLatestRelease(repo: string | undefined): Observable<ILatestRelease> {
+    return this.http.get<ILatestRelease>(`${URLS.BASE}repos/motheblackcat/${repo}/releases/latest`);
   }
 }

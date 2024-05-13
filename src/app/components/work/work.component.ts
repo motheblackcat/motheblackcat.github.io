@@ -1,41 +1,20 @@
-import { Observable, of } from 'rxjs';
-import { Repo } from 'src/app/interfaces/repo.interface';
+import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { Observable } from 'rxjs';
+import { IRepo } from 'src/app/interfaces/repo.interface';
 import { GithubService } from 'src/app/services/github.service';
-
-import { Component, OnInit } from '@angular/core';
-import { repos } from 'src/app/mocks/repos.mock';
-import { LANGUAGES_COLORS, LANGUAGES_NAMES } from 'src/app/enums/languages.enum';
+import { CardComponent } from './card/card.component';
 
 @Component({
   selector: 'app-work',
+  standalone: true,
+  imports: [CommonModule, CardComponent],
   templateUrl: './work.component.html',
   styleUrls: ['./work.component.scss']
 })
-export class WorkComponent implements OnInit {
-  zen$: Observable<string> | undefined;
-  repos$: Observable<Repo[]> | undefined = of(repos);
+export class WorkComponent {
+  gs = inject(GithubService);
 
-  constructor(private gs: GithubService) { }
-
-  // TODO: Test API requests overload prevention
-  ngOnInit() {
-    this.zen$ = this.gs.getZen();
-    this.repos$ = this.gs.getRepos();
-  }
-
-  getDotColor(language: string): string {
-    switch (language) {
-      case LANGUAGES_NAMES.TYPESCRIPT:
-        return LANGUAGES_COLORS.TYPESCRIPT;
-
-      case LANGUAGES_NAMES.JAVASCRIPT:
-        return LANGUAGES_COLORS.JAVASCRIPT;
-
-      case LANGUAGES_NAMES.CSHARP:
-        return LANGUAGES_COLORS.CSHARP;
-
-      default:
-        return LANGUAGES_COLORS.UNKNOWN;
-    }
-  }
+  zen$: Observable<string> = this.gs.getZen();
+  repos$: Observable<IRepo[]> = this.gs.getRepos();
 }

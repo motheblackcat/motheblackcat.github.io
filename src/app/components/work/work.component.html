@@ -1,29 +1,19 @@
-<section id="work" class="flex vhw-100">
-  <div class="m-auto">
-    <article *ngIf="zen$ | async as zen; else noZen" class="quote">
-      <q>{{ zen }}</q> <i>- Github Zen</i>
-    </article>
-    <ng-template #noZen>
-      <article>
-        The Github API seems to be down, you can check my work directly on
-        <a href="https://github.com/motheblackcat" target="_blank">Github.</a>
-      </article>
-    </ng-template>
+<section id="work">
+  <div class="grid-container">
+    @if (zen$ | async; as zen) {
+      <h1><q>{{ zen }}</q> <i>- Github Zen</i></h1>
+    }
+    @else {
+      <h1><q>No Github Zen quotes showed up it seems.</q></h1>
+    }
 
-    <div class="flex flex-center flex-wrap">
-      <div *ngFor="let repo of repos$ | async" class="flex flex-column flex-between card">
-        <div class="flex flex-between">
-          <a [href]="repo.html_url" target="_blank"><b>{{ repo.name }}</b></a>
-          <div>
-            <div *ngFor="let topic of repo.topics">{{ topic }}</div>
-          </div>
-        </div>
-        <p>{{ repo.description }}</p>
-        <div class="flex flex-align-center">
-          <div class="color-dot" [style.background-color]="getDotColor(repo.language)"></div>
-          <i>{{ repo.language }}</i>
-        </div>
-      </div>
-    </div>
+    @if (repos$ | async; as repos) {
+      @for (repo of repos; track $index) {
+        <app-card [repo]="repo"></app-card>
+      }
+    }
+    @else {
+      <h1>Oops! The Github Repos API seems to be down... Please go directly to <a href="https://github.com/motheblackcat" target="_blank">Github</a> to check some of my work!</h1>
+    }
   </div>
 </section>
