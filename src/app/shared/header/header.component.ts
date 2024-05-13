@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -7,28 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  @HostListener('window:scroll')
+  onScrollEvent() {
+    this.updateNav();
+  }
 
-  // TODO: Fix menu highlight
-  // TODO: Fix header bg-color on scroll (host window scroll) color swap animation + get programatically current section bg-color
   ngOnInit() {
-    const hash: string = window.location.hash ? window.location.hash : '#home';
-    (document.querySelector(`a[href="${hash}"]`) as HTMLLinkElement).className = 'active';
-
-    this.updateHeaderBgColor(hash);
+    this.updateNav();
   }
 
-  selectSection(event: Event) {
-    const links = document.querySelectorAll('nav a');
-    links.forEach(link => link.className = '');
-    (event.currentTarget as HTMLLinkElement).className = 'active';
+  updateNav() {
+    const navLinks: NodeListOf<HTMLLinkElement> = document.querySelectorAll('nav a');
+    navLinks.forEach(navLink => navLink.className = '');
 
-    this.updateHeaderBgColor((event.currentTarget as HTMLAnchorElement).hash);
-  }
+    const workSectionY = Math.abs(document.querySelector('#work')!.getBoundingClientRect().y);
+    const halfInnerHeight = window.innerHeight / 2;
+    const hash = workSectionY < halfInnerHeight ? '#work' : '#home';
 
-  updateHeaderBgColor(hash: string) {
-    const header = document.querySelector('header');
-    if (header) {
-      header.style.backgroundColor = hash === '#home' ? 'black' : '#0d1117';
-    }
+    document.querySelector(`a[href="${hash}"]`)!.className = 'active';
+    document.querySelector('header')!.style.backgroundColor = hash === '#home' ? 'black' : '#0d1117';
   }
 }
