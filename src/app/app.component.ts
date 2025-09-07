@@ -4,10 +4,9 @@ import { HomeComponent } from './components/home/home.component';
 import { WorkComponent } from './components/work/work.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [HeaderComponent, HomeComponent, WorkComponent],
-  templateUrl: './app.component.html'
+    selector: 'app-root',
+    imports: [HeaderComponent, HomeComponent, WorkComponent],
+    templateUrl: './app.component.html'
 })
 
 export class AppComponent { }

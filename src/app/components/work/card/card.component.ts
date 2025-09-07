@@ -7,11 +7,10 @@ import { IRepo } from 'src/app/interfaces/repo.interface';
 import { GithubService } from 'src/app/services/github.service';
 
 @Component({
-  selector: 'app-card',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './card.component.html',
-  styleUrl: './card.component.scss'
+    selector: 'app-card',
+    imports: [CommonModule],
+    templateUrl: './card.component.html',
+    styleUrl: './card.component.scss'
 })
 export class CardComponent {
   repo = input<IRepo>();

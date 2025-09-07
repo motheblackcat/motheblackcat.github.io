@@ -6,11 +6,10 @@ import { GithubService } from 'src/app/services/github.service';
 import { CardComponent } from './card/card.component';
 
 @Component({
-  selector: 'app-work',
-  standalone: true,
-  imports: [CommonModule, CardComponent],
-  templateUrl: './work.component.html',
-  styleUrls: ['./work.component.scss']
+    selector: 'app-work',
+    imports: [CommonModule, CardComponent],
+    templateUrl: './work.component.html',
+    styleUrls: ['./work.component.scss']
 })
 export class WorkComponent {
   gs = inject(GithubService);
