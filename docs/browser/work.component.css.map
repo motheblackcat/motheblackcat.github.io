@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/work/work.component.scss"],
+  "sourcesContent": ["section {\r\n    min-height: 100vh;\r\n    background-color: #0d1117;\r\n\r\n    .grid-container {\r\n        display: grid;\r\n        grid-template-columns: repeat(auto-fit, 650px);\r\n        justify-content: center;\r\n        align-content: center;\r\n        height: 100vh;\r\n        gap: 20px;\r\n\r\n        h1 {\r\n            grid-column: 1 / 3;\r\n            justify-self: center;\r\n        }\r\n    }\r\n\r\n    // TODO: Fix breakpoints\r\n    @media(max-width: 850px) {\r\n        padding: 50px 20px 20px;\r\n\r\n        .grid-container {\r\n            grid-template-columns: 1fr;\r\n            height: initial;\r\n\r\n            h1 {\r\n                grid-column: 1 / 2;\r\n                text-align: center;\r\n            }\r\n        }\r\n    }\r\n}"],
+  "mappings": ";AAAA;AACI,cAAA;AACA,oBAAA;;AAEA,QAAA,CAAA;AACI,WAAA;AACA,yBAAA,OAAA,QAAA,EAAA;AACA,mBAAA;AACA,iBAAA;AACA,UAAA;AACA,OAAA;;AAEA,QAAA,CARJ,eAQI;AACI,eAAA,CAAA,CAAA;AACA,gBAAA;;AAKR,QAAA,WAAA;AAnBJ;AAoBQ,aAAA,KAAA,KAAA;;AAEA,UAAA,CAlBJ;AAmBQ,2BAAA;AACA,YAAA;;AAEA,UAAA,CAtBR,eAsBQ;AACI,iBAAA,CAAA,CAAA;AACA,gBAAA;;;",
+  "names": []
+}
